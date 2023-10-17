@@ -1,0 +1,23 @@
+https://github.com/dome272/Diffusion-Models-pytorch/blob/main/ddpm.py
+
+https://github.com/dome272/MaskGIT-pytorch
+
+https://github.com/jychoi118/ilvr_adm/tree/main
+
+https://github.com/rosinality/denoising-diffusion-pytorch/tree/master
+
+https://arxiv.org/pdf/2305.08891.pdf
+
+mask-vit: https://arxiv.org/pdf/2112.09133.pdf
+
+mojo: https://github.com/modularml/mojo/tree/main/examples
+
+ddim: https://arxiv.org/pdf/2010.02502.pdf
+
+ssl-diff tf: https://github.com/yilmazkorkmaz1/SSDiffRecon/tree/main
+
+noise scheduling: https://arxiv.org/pdf/2301.10972.pdf
+
+u-vit: https://github.com/baofff/U-ViT/blob/main/dpm_solver_pp.py
+
+ssl-denoising diff: https://github.com/StanfordMIMI/DDM2/tree/main

@@ -1,0 +1,61 @@
+{
+    "Noise Function":
+    {
+        "Linear":
+        {
+            "beta_start": 1e-4,
+            "beta_end": 2e-2
+        },
+
+        "Cosine":
+        {
+            "start": 0.0,
+            "end": 1.0,
+            "tau": 1.0
+        },
+
+        "Sigmoid":
+        {
+            "start": -3.0,
+            "end": 3.0,
+            "tau": 1.0
+        }
+    },
+
+    "Hyperparameters":
+    {
+        "Timestep": 1000,
+        "Image Size": 64,
+        "Image Scale": 1.0,
+        "Noise Function": "Linear",
+        "Epochs": 10,
+        "Learning Rate": 3e-4,
+        "Batch Size": 16
+    },
+
+    "Dataset":
+    {
+        "Name": "Pristine RAW",
+        "Image Size": 64,
+        "Image Scale": 1.0,
+        "Path": "../Pristine/PTY_pristine_raw.tif"
+    },
+
+    "Models":
+    {
+        "UNetDDPM":
+        {
+            "Image Channels": 3,
+            "Feature Channels": 64,
+            "Channel Multipliers": [1, 2, 2, 4],
+            "Attention": [0, 0, 1, 1],
+            "NumBlocks": 2,
+            "Path": "./models/backbone/unet_ddpm.py"
+        },
+
+        "UNet":
+        {
+            "Path": "./models/backbone/unet_v1.py"
+        }
+    }
+}
