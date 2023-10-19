@@ -41,21 +41,11 @@
         "Path": "../Pristine/PTY_pristine_raw.tif"
     },
 
-    "Models":
+    "Model":
     {
-        "UNetDDPM":
-        {
-            "Image Channels": 3,
-            "Feature Channels": 64,
-            "Channel Multipliers": [1, 2, 2, 4],
-            "Attention": [0, 0, 1, 1],
-            "NumBlocks": 2,
-            "Path": "./models/backbone/unet_ddpm.py"
-        },
-
         "UNet":
         {
-            "Path": "./models/backbone/unet_v1.py"
+            "Path": "./models/unet.py"
         }
     }
 }

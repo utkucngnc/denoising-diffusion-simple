@@ -60,9 +60,3 @@ def GetModel(model_name: str, builtin = None):
 
 def CopyDictSlice(d: dict, start: int, end: int) -> dict:
     return {k: v for k, v in list(d.items())[start:end]}
-
-def Gather(consts: torch.Tensor, t: torch.Tensor):
-    """Gather consts for $t$ and reshape to feature map shape"""
-    c = consts.gather(-1, t)
-    return c.reshape(-1, 1, 1, 1)
-
