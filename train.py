@@ -14,7 +14,7 @@ logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s", level=log
 
 def train(args):
     device = GetDevice()
-    hp = GetConfig("Hyperparameters")
+    hp = GetConfig(key="Hyperparameters")
 
     ds = BD(transform = transforms.Compose([
         transforms.Resize(hp["Image Size"],antialias=True),

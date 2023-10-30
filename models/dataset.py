@@ -7,7 +7,7 @@ from utils import GetConfig
 
 class BatteryDataset(Dataset):
     def __init__(self, transform = None) -> None:
-        self.cf = GetConfig("Dataset")
+        self.cf = GetConfig(key="Dataset")
         self.root_dir = self.cf["Path"]
         self.im_size = self.cf["Image Size"]
         self.imgs = io.imread(self.root_dir)

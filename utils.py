@@ -48,7 +48,7 @@ def SaveImg(tensor: torch.Tensor, path: str) -> None:
     img.save(path)
 
 def GetModel(model_name: str, builtin = None):
-    cfg = GetConfig("Models")[model_name]
+    cfg = GetConfig(key = "Model")[model_name]
     model = SourceFileLoader(model_name, cfg["Path"]).load_module()
     if builtin:
         params = CopyDictSlice(cfg, 0, len(cfg))
