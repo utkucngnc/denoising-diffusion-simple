@@ -46,7 +46,7 @@ def train(args):
             pbar.set_postfix(MSE=loss.item())
             logger.add_scalar("MSE", loss.item(), global_step=epoch * l + i)
         
-        torch.save(model.state_dict(), os.path.join("models", args.run_name, f"ckpt.pt"))     
+        torch.save(model.state_dict(), "ckpt.pt")    
         
 if __name__ == "__main__":
     import argparse
