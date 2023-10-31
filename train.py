@@ -45,11 +45,9 @@ def train(args):
 
             pbar.set_postfix(MSE=loss.item())
             logger.add_scalar("MSE", loss.item(), global_step=epoch * l + i)
-
-        sampled_images = diffusion.Sample(model, n=images.shape[0])
-        SaveImg(sampled_images, os.path.join("results", args.run_name, f"{epoch}.jpg"))
-        torch.save(model.state_dict(), os.path.join("models", args.run_name, f"ckpt.pt"))
-
+        
+        torch.save(model.state_dict(), os.path.join("models", args.run_name, f"ckpt.pt"))     
+        
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()

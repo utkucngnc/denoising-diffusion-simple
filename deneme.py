@@ -1,10 +1,8 @@
-import torch as th
-from torch import nn
-from torch.nn import functional as F
-from torchvision import transforms
-from models.dataset import BatteryDataset as BD
-from models.noise_scheduler import NoiseScheduler as NS
+from tqdm import tqdm
+from models.ddpm import Diffusion_DDPM as Diffusion
+from utils import *
 
-betas = NS(function="Sigmoid", timesteps=10).betas
+diffusion = Diffusion(im_size=64,timestep=1000, function="Linear", device=GetDevice())
+model = GetModel("UNet", builtin=False).to(GetDevice())
 
-print(betas, betas.dtype, betas.shape)
+im = diffusion.Sample(model, n=1)

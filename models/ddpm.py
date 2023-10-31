@@ -1,5 +1,5 @@
 import torch
-import tqdm
+from tqdm import tqdm
 from .noise_scheduler import NoiseScheduler
 
 class Diffusion_DDPM:
@@ -36,13 +36,13 @@ class Diffusion_DDPM:
     def SampleTimesteps(self, n: int):
         return torch.randint(low=1, high=self.timestep, size=(n,))
     
-    def Sample(self, model: torch.nn.Module, n: int):
+    def Sample(self, model, n):
         model.eval()
 
         with torch.no_grad():
-            x = torch.randn((n, 3, self.im_size, self.im_size)).to(self.device)
-            for i in tqdm(reversed(range(1, self.timestep)), position=0):
-                t = (torch.ones(n) * i).long().to(self.device)
+            x = torch.randn((n, 1, self.im_size, self.im_size)).to(self.device)
+            for i in reversed(range(1, self.timestep)):
+                t = (torch.ones(n) * i).to(self.device).double()
                 predicted_noise = model(x, t)
                 alpha = self.alphas[t][:, None, None, None]
                 alpha_hat = self.alpha_hats[t][:, None, None, None]
